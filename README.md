@@ -19,6 +19,7 @@ setting
 <DataTableExt :setting="{{ json_encode($settings) }}"/>
 // Import as a component. See below
 <v-datatable-ext :setting="{{ json_encode($settings) }}"/>
+<v-datetime-picker :label="{{ $label }}" />
 ```
 Import as a component
 ```js
@@ -30,7 +31,7 @@ const app = new Vue({
     components: { DataTableExt }
 });
 ```
-Explain the use of 'setting' prop
+## Explain the use of 'setting' prop
 ```js
 /* Example for setting prop */
 let settings = {
