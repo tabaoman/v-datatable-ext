@@ -1,6 +1,6 @@
 # v-datatable-ext
-
 An Extension for Vuetify [DataTable](https://vuetifyjs.com/en/components/data-tables)
+![Preview](http://soulead.com/storage/github/v-datatable-ext.png)
 This component make v-data-table more flexible, such as
   - Remote request for records
   - Customized buttons in table header and the last column (as action column)
@@ -9,22 +9,6 @@ This component make v-data-table more flexible, such as
   - Tell component which column is for avatar/tick
   - Show row number or not
   - Easy to define rows-per-page-items
-
-## Build Setup
-
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-```
 
 ## Prop
 setting
@@ -61,51 +45,51 @@ let settings = {
   //      'color'(string): the button color
   //      'event'(string): the event string emitted once pressed. You need to listen to this event by yourself.
   selectEvents: {
-          delete: 'Delete some',
-          actions: [
-            { always:true, text:'Export', color:'light-green lighten-1', event:'evtExport' }
-          ]
-        },
-    //  'pagination'(object): The built-in prop of v-data-table. If 'rowsPerPage' is not one of 'rowsPerPageItems', it will be ignored.
-        pagination: { page:1, rowsPerPage:10, totalItems:0 },
-    //  'rowsPerPageItems'(array): The enum numbers indicate kinds of rows-per-page-items
-        rowsPerPageItems: [25, 50, 100],
-    //  'filterList'(array): Put some dropdown lists in table header
-    //    'hint'(string): the list text
-    //    'items'(array): id-name pairs. If any item is selected, the id will be sent to backend.
-        filterList: [
-          { hint: 'Gender', items: [{ id:0, name:'Female' }, { id:1, name:'Male' }, { id:2, name:'Need backend to filter' }] },
-          { hint: 'Level',  items: [{ id:0, name:'Engineer' }, { id:1, name:'Manager' }, { id:2, name:'Need backend to filter' }] },
-        ],
-    //  'buttons'(object): The buttons in the last column (except 'new' due to historic reason)
-    //    'new': A button in table header for creating a new item. The only diff from 'selectEvents' is that it can be shown on the left of 'selectEvents.delete' button.
-    //     'edit': A pencil-icon button to trigger event. It is supposed to handle item edit.
-    //      'delete'(boolean): A trash-icon button to send request to 'urlToDelete' with item id
-    //      'actions'(array):
-    //        'text' - button text. Use ?: operator to show different texts by an item key;
-    //        'icon' - button icon having higher priority to 'text'. Use ?: operator to show different icons by an item key
-    //        'event' - the event string to send
-    //        'lazyLoad' - fetch from 'url' before triggering the event with the returned json object[retKey]
-        buttons: {
-          new:  { text:'New Member', event: 'evtNewMember' },
-          edit: { text:'Change', event: 'evtChange' },
-          delete: true,
-          actions: [
-            { text:'deleted?Restore:Delete', icon:'deleted?fa-redo:fa-times', event:'evtSwitch' },
-            { text:'Do It', icon:'fa-user', event:'openDetail', lazyLoad: { url:'/member/detail', retKey:'member' } }
-          ]
-        },
-//      'url'(string): The url to fetch the items with following params appended.
-//         page: the current page number
-//         row: the row number per page
-//         query: the search string
-//         filter[0...n]: the values of filter lists
-//         sortBy: by which column need to sort
-//         direction: sort direction
-        url: '/list',
-//     'urlToDelete': the url send post request to. It is supposed to delete item(s)
-        urlToDelete: '/delete',
-      }
+    delete: 'Delete some',
+    actions: [
+      { always:true, text:'Export', color:'light-green lighten-1', event:'evtExport' }
+    ]
+  },
+  //  'pagination'(object): The built-in prop of v-data-table. If 'rowsPerPage' is not one of 'rowsPerPageItems', it will be ignored.
+  pagination: { page:1, rowsPerPage:10, totalItems:0 },
+  //  'rowsPerPageItems'(array): The enum numbers indicate kinds of rows-per-page-items
+  rowsPerPageItems: [25, 50, 100],
+  //  'filterList'(array): Put some dropdown lists in table header
+  //    'hint'(string): the list text
+  //    'items'(array): id-name pairs. If any item is selected, the id will be sent to backend.
+  filterList: [
+    { hint: 'Gender', items: [{ id:0, name:'Female' }, { id:1, name:'Male' }, { id:2, name:'Need backend to filter' }] },
+    { hint: 'Level',  items: [{ id:0, name:'Engineer' }, { id:1, name:'Manager' }, { id:2, name:'Need backend to filter' }] },
+  ],
+  //  'buttons'(object): The buttons in the last column (except 'new' due to historic reason)
+  //    'new': A button in table header for creating a new item. The only diff from 'selectEvents' is that it can be shown on the left of 'selectEvents.delete' button.
+  //     'edit': A pencil-icon button to trigger event. It is supposed to handle item edit.
+  //      'delete'(boolean): A trash-icon button to send request to 'urlToDelete' with item id
+  //      'actions'(array):
+  //        'text' - button text. Use ?: operator to show different texts by an item key;
+  //        'icon' - button icon having higher priority to 'text'. Use ?: operator to show different icons by an item key
+  //        'event' - the event string to send
+  //        'lazyLoad' - fetch from 'url' before triggering the event with the returned json object[retKey]
+  buttons: {
+    new:  { text:'New Member', event: 'evtNewMember' },
+    edit: { text:'Change', event: 'evtChange' },
+    delete: true,
+    actions: [
+      { text:'deleted?Restore:Delete', icon:'deleted?fa-redo:fa-times', event:'evtSwitch' },
+      { text:'Do It', icon:'fa-user', event:'openDetail', lazyLoad: { url:'/member/detail', retKey:'member' } }
+    ]
+  },
+  //      'url'(string): The url to perform GET request for the items with following params appended.
+  //         page: the current page number
+  //         row: the row number per page
+  //         query: the search string
+  //         filter[0...n]: the values of filter lists
+  //         sortBy: by which column need to sort
+  //         direction: sort direction
+  url: '/list',
+  //     'urlToDelete': the url send PUT request to. It is supposed to delete item(s)
+  urlToDelete: '/delete',
+}
 ```
 
 License
@@ -115,5 +99,3 @@ MIT
 
 
 **Free Software, Hell Yeah!**
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
