@@ -1,4 +1,4 @@
-# v-datatable-ext
+# v-datatable-ext (with a widget of date time picker)
 An Extension for Vuetify [DataTable](https://vuetifyjs.com/en/components/data-tables)
 ![Preview](http://soulead.com/storage/github/v-datatable-ext2.png)
 This component make v-data-table more flexible, such as
@@ -71,9 +71,10 @@ let settings = {
   //  'filterList'(array): Put some dropdown lists in table header
   //    'hint'(string): the list text
   //    'items'(array): id-name pairs. If any item is selected, the id will be sent to backend.
+  //    'type'(string): show a date time picker if its value is 'datetime' (the only value)
   filterList: [
     { hint: 'Gender', items: [{ id:0, name:'Female' }, { id:1, name:'Male' }, { id:2, name:'Need backend to filter' }] },
-    { hint: 'Level',  items: [{ id:0, name:'Engineer' }, { id:1, name:'Manager' }, { id:2, name:'Need backend to filter' }] },
+    { hint: 'Level',  type: 'datetime' },
   ],
   //  'buttons'(object): The buttons in the last column (except 'new' due to historic reason)
   //    'new': A button in table header for creating a new item. The only diff from 'selectEvents' is that it can be shown on the left of 'selectEvents.delete' button.
