@@ -40,12 +40,12 @@
                                 clearable
                                 @change="performLoad"
                         ></v-combobox>
-                        <v-datetime-picker
+                        <DateTimePicker
                                 v-else-if="f.hasOwnProperty('type') && f.type === 'datetime'"
                                 v-model="filter[i]"
                                 :label="f.hint"
                                 @input="performLoad"
-                        ></v-datetime-picker>
+                        ></DateTimePicker>
                     </template>
                     <v-text-field
                             v-model="search"
@@ -141,8 +141,11 @@
 </template>
 
 <script>
+  import DateTimePicker from './DateTimePicker';
+
   export default {
     props: ['setting'],
+    components: { DateTimePicker },
     data () {
       return {
         tabSetting: this.setting,

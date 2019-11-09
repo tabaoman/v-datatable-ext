@@ -33,7 +33,7 @@ export default {
         rowsPerPageItems: [25, 50, 100],
         filterList: [
           { hint: 'Gender', items: [{ id:0, name:'Female' }, { id:1, name:'Male' }, { id:2, name:'Need backend to filter' }] },
-          { hint: 'Level',  items: [{ id:0, name:'Engineer' }, { id:1, name:'Manager' }, { id:2, name:'Need backend to filter' }] },
+          { hint: 'Join Time',type: 'datetime' },
         ],
         buttons: {
           new:  { text:'New Member', event: 'evtNewMember' },

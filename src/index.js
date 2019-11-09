@@ -6,10 +6,12 @@
  */
 
 
-import DataTableExt from './components/DataTableExt'
+import DataTableExt from './components/DataTableExt';
+import DateTimePicker from './components/DateTimePicker';
 
 const install = Vue => {
-    Vue.component('v-datatable-ext', DataTableExt)
-}
+    Vue.component('v-datetime-picker', DateTimePicker);
+    Vue.component('v-datatable-ext', DataTableExt);
+};
 
-export default install
+export default install;
