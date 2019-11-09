@@ -406,7 +406,7 @@
             }
             this.data = [];
             axios.get(url).then(res => {
-                let ret = eval('('+res.data+')');
+                let ret = (typeof res.data) == 'string' ? eval('('+res.data+')') : res.data;
                 if (ret.hasOwnProperty('setting')) {
                     this.init(ret.setting);
                 }
