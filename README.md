@@ -15,8 +15,22 @@ setting
 
 ```php
 # php
+// Directly use
 <DataTableExt :setting="{{ json_encode($settings) }}"/>
+// Import as a component. See below
+<v-datatable-ext :setting="{{ json_encode($settings) }}"/>
 ```
+Import as a component
+```js
+import DataTableExt from 'v-datatable-ext';
+Vue.use(DataTableExt);
+const app = new Vue({
+    el: '#app',
+    vuetify: new Vuetify({}),
+    components: { DataTableExt }
+});
+```
+Explain the use of 'setting' prop
 ```js
 /* Example for setting prop */
 let settings = {
