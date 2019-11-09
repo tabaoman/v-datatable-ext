@@ -1,6 +1,6 @@
 {
   "name": "v-datatable-ext",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An Extension of Vuetify DataTable",
   "author": "tony wang <wp0126@hotmail.com>",
   "private": false,
