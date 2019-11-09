@@ -1,6 +1,6 @@
 # v-datatable-ext
 An Extension for Vuetify [DataTable](https://vuetifyjs.com/en/components/data-tables)
-![Preview](http://soulead.com/storage/github/v-datatable-ext.png)
+![Preview](http://soulead.com/storage/github/v-datatable-ext2.png)
 This component make v-data-table more flexible, such as
   - Remote request for records
   - Customized buttons in table header and the last column (as action column)
@@ -86,6 +86,10 @@ let settings = {
   //         filter[0...n]: the values of filter lists
   //         sortBy: by which column need to sort
   //         direction: sort direction
+  //       The returned json object:
+  //         'data'(array): the new list of items
+  //         'total'(int): the total number of items
+  //         'setting'(object): Optional. You can reset the data table with a new setting
   url: '/list',
   //     'urlToDelete': the url send PUT request to. It is supposed to delete item(s)
   urlToDelete: '/delete',
