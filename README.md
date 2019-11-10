@@ -1,7 +1,7 @@
 # v-datatable-ext (with a widget of date time picker)
-An Extension for Vuetify [DataTable](https://vuetifyjs.com/en/components/data-tables)
+An Extension of Vuetify [DataTable](https://vuetifyjs.com/en/components/data-tables)
 ![Preview](http://soulead.com/storage/github/v-datatable-ext2.png)
-This component make v-data-table more flexible, such as
+This component make v-data-table easier and more flexible, such as
   - Remote request for records
   - Customized buttons in table header and the last column (as action column)
   - Customized filtrations in table header
@@ -9,6 +9,15 @@ This component make v-data-table more flexible, such as
   - Tell component which column is for avatar/tick
   - Show row number or not
   - Easy to define rows-per-page-items
+
+## Run the example locally
+```sh
+git clone https://github.com/tabaoman/v-datatable-ext
+cd v-datatable-ext
+npm install
+npm run dev
+```
+And then visit http://localhost:8080 in your favorate browser.
 
 ## Prop
 setting
